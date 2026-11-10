@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f2">
+  <title>AUREL — Admin dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modern.css"><script src="admin.js" defer></script>
+</head>
+<body class="modern-page portal-page admin-portal">
+  <main class="portal-shell">
+    <header class="portal-topbar">
+      <a class="portal-brand" href="index.html"><span class="portal-brand-mark">A</span><span>AUREL<small>STORE MANAGEMENT</small></span></a>
+      <nav class="portal-navigation" aria-label="Admin navigation"><a class="is-current" href="admin.html">Dashboard</a><a href="orders.html">Orders</a><a href="shop.html">Products</a><a href="reseller.html">Reseller portal</a><a href="index.html">View storefront <span>↗</span></a></nav>
+      <button class="portal-avatar modern-hidden" type="button" data-logout aria-label="Sign out of admin">↗</button>
+    </header>
+
+    <section class="portal-auth-layout" data-login-panel>
+      <div class="portal-auth-story">
+        <span class="portal-eyebrow"><i></i> YOUR STORE, IN GOOD HANDS</span>
+        <h1>A calmer way<br>to run your <em>store.</em></h1>
+        <p>One thoughtful workspace for your products, brand and reseller community.</p>
+        <div class="portal-feature-list"><span><i>01</i> Build and curate your catalogue</span><span><i>02</i> Review new reseller submissions</span><span><i>03</i> Keep your collection in the spotlight</span></div>
+        <span class="portal-auth-caption">AUREL <span>·</span> STORE ADMINISTRATION</span>
+      </div>
+      <div class="portal-auth-card"><div class="portal-auth-icon">↗</div><span class="portal-eyebrow">WELCOME BACK</span><h2>Sign in to your store</h2><p>Enter your administrator details to continue.</p>
+        <form class="portal-form" data-login-form><label class="modern-field">Email address<input name="email" type="email" autocomplete="username" placeholder="you@yourstore.com" required></label><label class="modern-field">Password<input name="password" type="password" autocomplete="current-password" placeholder="Your password" required></label><button class="modern-button portal-submit" type="submit">Continue to dashboard <span>→</span></button></form>
+        <p class="modern-status" data-status role="status"></p><small class="portal-auth-footnote">Store owner access only. Resellers can sign in through the <a href="reseller.html">reseller portal</a>.</small>
+      </div>
+    </section>
+
+    <section class="portal-dashboard modern-hidden" data-dashboard>
+      <div class="portal-page-heading"><div><span class="portal-eyebrow"><i></i> YOUR STORE AT A GLANCE</span><h1>Good morning.<br><em>Here's your overview.</em></h1><p>Keep your catalogue fresh and your next great product moving.</p></div><button class="modern-button" type="button" data-jump-to-form>＋ &nbsp;Add a product</button></div>
+      <div class="portal-stats" data-stats></div>
+      <section class="portal-content-card portal-editor-card" id="product-editor">
+        <div class="portal-section-heading"><div><span class="portal-section-icon">✳</span><div><span class="portal-eyebrow">PRODUCT WORKSHOP</span><h2 data-form-title>Add a product</h2></div></div><span class="portal-step-label">01 / CATALOGUE</span></div>
+        <p class="portal-section-description">Add each product's details. AUREL is the default brand; choose a category that fits.</p>
+        <form class="portal-form portal-product-form" data-product-form>
+          <label class="modern-field">Product name<input name="name" maxlength="100" placeholder="e.g. AUREL Handblock Dupatta" required></label>
+          <label class="modern-field">Category<input name="category" value="Rangoli" maxlength="50" required></label>
+          <label class="modern-field">Brand<input name="brand" value="AUREL" maxlength="50" required></label>
+          <label class="modern-field">Price<input name="price" type="number" min="0.01" step="0.01" placeholder="0.00" required></label>
+          <label class="modern-field">Unit cost <span class="portal-optional">FOR PROFIT REPORTING</span><input name="costPrice" type="number" min="0" step="0.01" placeholder="Add your cost price"></label>
+          <label class="modern-field">Compare-at price <span class="portal-optional">OPTIONAL</span><input name="comparePrice" type="number" min="0.01" step="0.01" placeholder="0.00"></label>
+          <label class="modern-field">Product badge<input name="badge" maxlength="40" placeholder="New arrival"></label>
+          <label class="modern-field">Colour<input name="color" maxlength="50" placeholder="e.g. Marigold"></label>
+          <label class="modern-field">Sizes <span class="portal-optional">COMMA SEPARATED</span><input name="sizes" placeholder="S, M, L"></label>
+          <label class="modern-field portal-span-all">Product photography<span class="portal-upload-box"><span class="portal-upload-icon">↑</span><span><strong data-image-name>Choose a product photo</strong><small>JPG, PNG or WebP · up to 4 MB</small></span><input name="image" type="file" accept="image/jpeg,image/png,image/webp"><span class="portal-upload-action">Browse</span></span><img class="modern-preview modern-hidden" data-image-preview alt="Selected product preview"></label>
+          <label class="modern-field portal-span-all">Product description<textarea name="description" maxlength="1000" placeholder="What makes this piece special?" required></textarea></label>
+          <label class="modern-field">Store status<select name="status"><option value="active">Published to storefront</option><option value="pending">Keep in review queue</option></select></label>
+          <div class="portal-form-actions portal-span-all"><span class="portal-form-note">Your changes are saved to the store catalogue.</span><button class="modern-button" type="submit" data-save-button>Save product <span>→</span></button><button class="modern-button secondary modern-hidden" type="button" data-cancel-edit>Cancel edit</button></div>
+        </form><p class="modern-status" data-status role="status"></p>
+      </section>
+      <section class="portal-content-card portal-catalogue-card">
+        <div class="portal-section-heading"><div><span class="portal-section-icon">▤</span><div><span class="portal-eyebrow">YOUR COLLECTION</span><h2>Product catalogue</h2></div></div><button class="modern-button secondary portal-refresh" type="button" data-refresh>↻ &nbsp;Refresh</button></div>
+        <p class="portal-section-description">Review product details, publish reseller pieces or tidy up your catalogue.</p>
+        <div class="modern-switch portal-filter" data-status-filter><button type="button" data-filter="all" aria-pressed="true">All products</button><button type="button" data-filter="pending" aria-pressed="false">Needs review</button><button type="button" data-filter="active" aria-pressed="false">Published</button></div>
+        <div class="modern-table-wrap"><table class="modern-table"><thead><tr><th>Product</th><th>Brand & category</th><th>Price</th><th>Status</th><th>Actions</th></tr></thead><tbody data-product-rows></tbody></table></div><p class="modern-status" data-list-status role="status"></p>
+      </section>
+      <footer class="portal-footer"><span>AUREL</span><span>MADE FOR GOOD THINGS.</span><a href="index.html">Visit your storefront ↗</a></footer>
+    </section>
+  </main>
+</body>
+</html>

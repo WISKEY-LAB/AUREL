@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f5">
+  <title>AUREL — Order management</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modern.css"><script src="orders.js" defer></script>
+</head>
+<body class="modern-page portal-page orders-portal">
+  <main class="portal-shell">
+    <header class="portal-topbar">
+      <a class="portal-brand" href="index.html"><span class="portal-brand-mark">A</span><span>AUREL<small>STORE MANAGEMENT</small></span></a>
+      <nav class="portal-navigation" aria-label="Admin navigation"><a href="admin.html">Dashboard</a><a class="is-current" href="orders.html">Orders</a><a href="shop.html">Products</a><a href="reseller.html">Reseller portal</a></nav>
+      <button class="portal-avatar modern-hidden" type="button" data-logout aria-label="Sign out of admin">↗</button>
+    </header>
+
+    <section class="portal-auth-layout orders-login" data-login-panel>
+      <div class="portal-auth-story">
+        <span class="portal-eyebrow"><i></i> ORDERS, AT A GLANCE</span>
+        <h1>Every order,<br>in <em>one place.</em></h1>
+        <p>Review customer and shipping details, track fulfilment, and understand store revenue.</p>
+        <div class="portal-feature-list"><span><i>01</i> Check every order and customer detail</span><span><i>02</i> Update fulfilment status and notes</span><span><i>03</i> Track booked sales and recorded costs</span></div>
+        <span class="portal-auth-caption">AUREL <span>·</span> ORDER MANAGEMENT</span>
+      </div>
+      <div class="portal-auth-card"><div class="portal-auth-icon">↗</div><span class="portal-eyebrow">ADMIN ACCESS</span><h2>Sign in to orders</h2><p>Order details are private to the store administrator.</p>
+        <form class="portal-form" data-login-form><label class="modern-field">Email address<input name="email" type="email" autocomplete="username" required></label><label class="modern-field">Password<input name="password" type="password" autocomplete="current-password" required></label><button class="modern-button portal-submit" type="submit">Continue to orders <span>→</span></button></form>
+        <p class="modern-status" data-login-status role="status"></p><small class="portal-auth-footnote">Store owner access only. <a href="admin.html">Go to admin dashboard</a>.</small>
+      </div>
+    </section>
+
+    <section class="portal-dashboard modern-hidden" data-dashboard>
+      <div class="portal-page-heading"><div><span class="portal-eyebrow"><i></i> STORE PERFORMANCE</span><h1>Orders &amp; <em>sales.</em></h1><p>Booked totals include demo orders; paid sales remain zero until payment processing is connected.</p></div><div class="orders-heading-actions"><button class="modern-button secondary" type="button" data-export>↓ &nbsp;Export CSV</button><button class="modern-button" type="button" data-refresh>↻ &nbsp;Refresh</button></div></div>
+      <div class="portal-stats order-stats" data-stats></div>
+
+      <section class="portal-content-card order-monthly">
+        <div class="portal-section-heading"><div><span class="portal-section-icon">▤</span><div><span class="portal-eyebrow">MONTHLY OVERVIEW</span><h2>Recent sales activity</h2></div></div></div>
+        <div class="modern-table-wrap"><table class="modern-table"><thead><tr><th>Month</th><th>Orders</th><th>Booked sales</th><th>Recorded profit</th></tr></thead><tbody data-monthly-rows></tbody></table></div>
+      </section>
+
+      <section class="portal-content-card order-list-card">
+        <div class="portal-section-heading"><div><span class="portal-section-icon">↗</span><div><span class="portal-eyebrow">CUSTOMER ORDERS</span><h2>Order register</h2></div></div></div>
+        <div class="orders-controls"><label class="modern-field">Search orders<input type="search" data-search placeholder="Order number, customer or email"></label><label class="modern-field">Status<select data-filter><option value="all">All statuses</option><option value="pending">Pending</option><option value="processing">Processing</option><option value="shipped">Shipped</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option><option value="refunded">Refunded</option></select></label></div>
+        <div class="modern-table-wrap"><table class="modern-table orders-table"><thead><tr><th>Order</th><th>Customer</th><th>Date</th><th>Items</th><th>Total</th><th>Status</th><th></th></tr></thead><tbody data-order-rows></tbody></table></div>
+        <p class="modern-status" data-page-status role="status"></p>
+      </section>
+      <footer class="portal-footer"><span>AUREL</span><span>DEMO CHECKOUT · NO PAYMENTS COLLECTED</span><a href="admin.html">Admin dashboard ↗</a></footer>
+    </section>
+  </main>
+
+  <dialog class="order-dialog" data-order-dialog aria-labelledby="dialog-title">
+    <div class="order-dialog-head"><div><span class="portal-eyebrow">ORDER DETAILS</span><h2 id="dialog-title" data-dialog-title></h2></div><button class="order-dialog-close" type="button" data-close-dialog aria-label="Close order details">×</button></div>
+    <div data-dialog-content></div>
+  </dialog>
+</body>
+</html>

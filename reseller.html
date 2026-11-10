@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7f2">
+  <title>AUREL — Seller studio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modern.css"><script src="reseller.js" defer></script>
+</head>
+<body class="modern-page portal-page reseller-portal">
+  <main class="portal-shell">
+    <header class="portal-topbar">
+      <a class="portal-brand" href="index.html"><span class="portal-brand-mark">A</span><span>AUREL<small>INDEPENDENT SELLER STUDIO</small></span></a>
+      <nav class="portal-navigation" aria-label="Seller navigation"><a class="is-current" href="reseller.html">Seller studio</a><a href="shop.html">Explore the shop</a><a href="index.html">Storefront <span>↗</span></a><a class="portal-admin-link" href="admin.html">Admin</a></nav>
+      <button class="portal-avatar modern-hidden" type="button" data-logout aria-label="Sign out of reseller account">↗</button>
+    </header>
+
+    <section class="portal-auth-layout" data-auth-panel>
+      <div class="portal-auth-story reseller-story">
+        <span class="portal-eyebrow"><i></i> A PLACE FOR YOUR NEXT BIG THING</span>
+        <h1>Small brand.<br><em>Big energy.</em></h1>
+        <p>Bring your products to a thoughtful storefront. We make it easy to show your work and share the story behind it.</p>
+        <div class="reseller-benefits"><div><span>✳</span><strong>Your own products</strong><small>Build a catalogue that feels like you.</small></div><div><span>↗</span><strong>Easy product uploads</strong><small>Add clear details and great photos.</small></div><div><span>✓</span><strong>Thoughtful review</strong><small>Listings go live after approval.</small></div></div>
+        <span class="portal-auth-caption">YOUR CRAFT <span>·</span> OUR COMMUNITY <span>·</span> GOOD THINGS, TOGETHER</span>
+      </div>
+      <div class="portal-auth-card"><div class="portal-auth-icon">✳</div><div class="modern-switch portal-auth-switch"><button type="button" data-auth-mode="login" aria-pressed="true">Sign in</button><button type="button" data-auth-mode="register" aria-pressed="false">Create an account</button></div><span class="portal-eyebrow" data-auth-kicker>YOUR SELLER STUDIO</span><h2 data-auth-title>Welcome back.</h2><p data-auth-description>Sign in to manage your products and check their review status.</p>
+        <form class="portal-form" data-auth-form><label class="modern-field">Email address<input name="email" type="email" autocomplete="username" placeholder="you@yourbrand.com" required></label><label class="modern-field">Password<input name="password" type="password" minlength="10" autocomplete="current-password" placeholder="At least 10 characters" required><small class="portal-field-hint" data-password-hint>Use at least 10 characters.</small></label><button class="modern-button portal-submit" type="submit" data-auth-submit>Sign in to your studio <span>→</span></button></form>
+        <p class="modern-status" data-status role="status"></p><small class="portal-auth-footnote">New here? Make an account and start sharing your work.</small>
+      </div>
+    </section>
+
+    <section class="portal-dashboard modern-hidden" data-reseller-dashboard>
+      <div class="portal-page-heading"><div><span class="portal-eyebrow"><i></i> YOUR SELLER STUDIO</span><h1>Make room for<br><em>something lovely.</em></h1><p>Add a product or check on the pieces you've already shared.</p></div><a class="modern-button portal-view-shop" href="shop.html">Explore the shop <span>↗</span></a></div>
+      <div class="reseller-process"><div><span>01</span><strong>Add your details</strong><small>Share the product and a clear photo.</small></div><i>→</i><div><span>02</span><strong>We take a look</strong><small>Your listing waits for review.</small></div><i>→</i><div><span>03</span><strong>Meet your shoppers</strong><small>Approved pieces appear in the shop.</small></div></div>
+      <div class="reseller-workspace">
+        <section class="portal-content-card reseller-editor">
+          <div class="portal-section-heading"><div><span class="portal-section-icon">＋</span><div><span class="portal-eyebrow">THE MAKER'S TABLE</span><h2>Add a product</h2></div></div></div>
+          <p class="portal-section-description">Tell us about your piece. AUREL is the default brand; choose the category that fits.</p>
+          <form class="portal-form portal-product-form" data-product-form>
+            <label class="modern-field">Product name<input name="name" maxlength="100" placeholder="Give your piece a name" required></label>
+            <div class="portal-form-pair"><label class="modern-field">Brand<input name="brand" value="AUREL" maxlength="50" required></label><label class="modern-field">Category<input name="category" value="Rangoli" maxlength="50" required></label></div>
+            <div class="portal-form-pair"><label class="modern-field">Your price<input name="price" type="number" min="0.01" step="0.01" placeholder="0.00" required></label><label class="modern-field">Compare-at price <span class="portal-optional">OPTIONAL</span><input name="comparePrice" type="number" min="0.01" step="0.01" placeholder="0.00"></label></div>
+            <label class="modern-field">Your unit cost <span class="portal-optional">OPTIONAL · HELPS ESTIMATE PROFIT</span><input name="costPrice" type="number" min="0" step="0.01" placeholder="Your cost to make or buy one"></label>
+            <div class="portal-form-pair"><label class="modern-field">Colour<input name="color" maxlength="50" placeholder="e.g. Terracotta"></label><label class="modern-field">Sizes <span class="portal-optional">OPTIONAL</span><input name="sizes" placeholder="S, M, L"></label></div>
+            <label class="modern-field">Product badge <span class="portal-optional">OPTIONAL</span><input name="badge" maxlength="40" placeholder="Handmade with care"></label>
+            <label class="modern-field">Product photo <span class="portal-upload-box"><span class="portal-upload-icon">↑</span><span><strong data-file-label>Choose a product photo</strong><small>JPG, PNG or WebP · up to 4 MB</small></span><input name="image" type="file" accept="image/jpeg,image/png,image/webp" required><span class="portal-upload-action">Browse</span></span></label>
+            <label class="modern-field">A little about this piece<textarea name="description" maxlength="1000" placeholder="Materials, inspiration, how it is made..." required></textarea></label>
+            <button class="modern-button portal-submit" type="submit">Send for review <span>→</span></button>
+          </form><p class="modern-status" data-status role="status"></p><small class="portal-private-note">Your listing will stay private until an admin approves it.</small>
+        </section>
+        <section class="portal-content-card reseller-listings">
+          <div class="portal-section-heading"><div><span class="portal-section-icon">▤</span><div><span class="portal-eyebrow">YOUR LITTLE COLLECTION</span><h2>Your listings</h2></div></div></div>
+          <p class="portal-section-description">Each product's status is right here. Pending means your listing is with our team for review.</p>
+          <div class="modern-table-wrap"><table class="modern-table"><thead><tr><th>Product</th><th>Brand & category</th><th>Price</th><th>Status</th></tr></thead><tbody data-product-rows></tbody></table></div><p class="modern-status" data-list-status role="status"></p>
+        </section>
+      </div>
+      <footer class="portal-footer"><span>AUREL</span><span>YOUR CRAFT BELONGS HERE.</span><a href="shop.html">Meet the collection ↗</a></footer>
+    </section>
+  </main>
+</body>
+</html>
