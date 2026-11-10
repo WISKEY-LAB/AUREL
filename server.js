@@ -566,8 +566,9 @@ async function handleRequest(request, response) {
 
 initialize().then(() => {
   const port = Number(process.env.PORT) || 3000;
-  http.createServer(handleRequest).listen(port, process.env.HOST || "127.0.0.1", () => {
-    console.log(`AUREL storefront is running at http://localhost:${port}`);
+  const host = process.env.HOST || "0.0.0.0";
+  http.createServer(handleRequest).listen(port, host, () => {
+    console.log(`AUREL storefront is running at http://${host === "0.0.0.0" ? "localhost" : host}:${port}`);
   });
 }).catch((error) => {
   console.error("Could not initialize the storefront backend:", error);
